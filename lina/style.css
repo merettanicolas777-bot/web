@@ -1,0 +1,151 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --lina-brown: #A07348;
+    --lina-cream: #FDFBF7;
+    --lina-dark: #2D2D2D;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--lina-cream);
+    color: var(--lina-dark);
+    margin: 0;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+.font-script { font-family: 'Dancing Script', cursive; }
+
+/* Navbar común */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(160, 115, 72, 0.1);
+    box-sizing: border-box;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--lina-dark);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--lina-brown);
+}
+
+.btn-lina {
+    background-color: var(--lina-brown);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-lina:hover { background-color: var(--lina-dark); }
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* VARIABLES DE MARCA */
+:root {
+    --lina-brown: #A07348;
+    --lina-cream: #FDFBF7;
+    --lina-text: #2D2D2D;
+    --lina-gray: #F5F5F5;
+}
+
+/* ESTILOS BASE */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--lina-cream);
+    color: var(--lina-text);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+.handwritten { font-family: 'Dancing Script', cursive; }
+
+/* ANIMACIÓN DE ENTRADA SUAVE */
+body { animation: fadeIn 0.8s ease-out; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MICROINTERACCIONES IMÁGENES */
+.img-hover-zoom {
+    overflow: hidden;
+    border-radius: 12px;
+}
+.img-hover-zoom img {
+    transition: transform 0.7s ease;
+}
+.img-hover-zoom:hover img {
+    transform: scale(1.08);
+}
+
+/* NAVEGACIÓN ACTIVA */
+.nav-link.active {
+    color: var(--lina-brown);
+    font-weight: bold;
+    border-bottom: 2px solid var(--lina-brown);
+}
+
+/* --- ANIMACIONES CATÁLOGO --- */
+
+/* Animación de entrada hacia arriba */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-card {
+    opacity: 0; /* Invisible al inicio */
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Retardos para efecto cascada (Stagger) */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* Botón flotante del producto */
+.product-btn {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.group:hover .product-btn {
+    transform: translateY(0);
+    opacity: 1;
+}

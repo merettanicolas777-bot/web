@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección | Lina Home & Deco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#FDFBF7]">
+
+    <nav class="fixed top-0 w-full z-50 bg-[#FDFBF7]/95 backdrop-blur-md py-4 border-b border-[#A07348]/10" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="block group">
+                <img src="logo.png" alt="Lina Home & Deco" class="h-16 w-auto object-contain transition group-hover:opacity-80 rounded-full">
+            </a>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-[0.15em] text-gray-500">
+                <a href="index.html" class="hover:text-[#A07348] transition">Inicio</a>
+                <a href="catalogo.html" class="text-[#A07348]">Colección</a>
+                <a href="nosotros.html" class="hover:text-[#A07348] transition">Nosotros</a>
+                
+            </div>
+            
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-[#A07348] focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             class="md:hidden absolute top-full left-0 w-full bg-[#FDFBF7] shadow-xl border-t border-[#A07348]/20 py-4 flex flex-col items-center space-y-4 z-40">
+            <a href="index.html" @click="mobileMenuOpen = false" class="text-[#2D2D2D] hover:text-[#A07348] transition">Inicio</a>
+            <a href="catalogo.html" @click="mobileMenuOpen = false" class="text-[#A07348] font-bold">Colección</a>
+            <a href="nosotros.html" @click="mobileMenuOpen = false" class="text-[#2D2D2D] hover:text-[#A07348] transition">Nosotros</a>
+            <a href="contacto.html" @click="mobileMenuOpen = false" class="text-[#2D2D2D] hover:text-[#A07348] transition">Contacto</a>
+        </div>
+    </nav>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <header class="pt-40 pb-12 px-6 text-center">
+        <span class="text-[#A07348] font-bold text-xs uppercase tracking-[0.2em] mb-3 block animate-card">Tienda Online</span>
+        <h1 class="text-5xl md:text-6xl font-serif text-[#2D2D2D] mb-6 animate-card delay-100">Nuestra Selección</h1>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-8 animate-card delay-200" id="filters">
+            <button class="filter-btn active px-6 py-2 rounded-full border border-[#A07348] bg-[#A07348] text-white text-xs uppercase tracking-widest transition duration-300" data-filter="all">Todos</button>
+            <button class="filter-btn px-6 py-2 rounded-full border border-[#A07348] text-[#A07348] hover:bg-[#A07348] hover:text-white text-xs uppercase tracking-widest transition duration-300" data-filter="aroma">Aromas</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pb-24">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-12" id="product-grid">
+
+            <div class="product-item group cursor-pointer animate-card delay-300" data-category="aroma">
+                <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-5 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Homespray">
+                    
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500 z-10 flex items-center justify-center">
+                        <a href="producto-jarron.html" class="product-btn bg-white text-[#2D2D2D] px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl hover:bg-[#A07348] hover:text-white inline-block">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-serif text-[#2D2D2D] group-hover:text-[#A07348] transition">Homespray</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 mb-2">Aromas</p>
+                    <p class="text-[#A07348] font-bold text-lg">Consultar</p>
+                </div>
+            </div>
+
+            <!-- Item eliminado: Manta -->
+
+            <div class="product-item group cursor-pointer animate-card delay-500" data-category="aroma">
+                <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-5 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500 z-10 flex items-center justify-center">
+                        <a href="producto-vela.html" class="product-btn bg-white text-[#2D2D2D] px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl hover:bg-[#A07348] hover:text-white inline-block">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-serif text-[#2D2D2D] group-hover:text-[#A07348] transition">Vela de Soja Aromática</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 mb-2">Aromas</p>
+                    <p class="text-[#A07348] font-bold text-lg">Consultar</p>
+                </div>
+            </div>
+
+            <div class="product-item group cursor-pointer animate-card delay-200" data-category="aroma">
+                <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-5 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500 z-10 flex items-center justify-center">
+                        <a href="producto-tazas.html" class="product-btn bg-white text-[#2D2D2D] px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl hover:bg-[#A07348] hover:text-white inline-block">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-serif text-[#2D2D2D] group-hover:text-[#A07348] transition">Difusor para Auto</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 mb-2">Aromas</p>
+                    <p class="text-[#A07348] font-bold text-lg">Consultar</p>
+                </div>
+            </div>
+
+            <!-- Item eliminado: Cesto -->
+            
+             <div class="product-item group cursor-pointer animate-card delay-400" data-category="aroma">
+                <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-5 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500 z-10 flex items-center justify-center">
+                        <a href="producto-difusor.html" class="product-btn bg-white text-[#2D2D2D] px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl hover:bg-[#A07348] hover:text-white inline-block">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-serif text-[#2D2D2D] group-hover:text-[#A07348] transition">Difusor de Varillas</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 mb-2">Aromas</p>
+                    <p class="text-[#A07348] font-bold text-lg">Consultar</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.product-item');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // 1. Manejo visual de botones
+                    buttons.forEach(b => {
+                        b.classList.remove('bg-[#A07348]', 'text-white');
+                        b.classList.add('text-[#A07348]');
+                    });
+                    btn.classList.add('bg-[#A07348]', 'text-white');
+                    btn.classList.remove('text-[#A07348]');
+
+                    // 2. Lógica de filtrado
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            // Reiniciamos animación sutilmente
+                            item.style.animation = 'none';
+                            item.offsetHeight; /* trigger reflow */
+                            item.style.animation = 'fadeInUp 0.5s forwards';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
